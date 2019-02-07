@@ -1,0 +1,262 @@
+% Pedigree fools fools.
+\documentclass[a4paper,12pt,oneside]{book}
+\usepackage[top=0.5in, bottom=0.5in, left=0.25in, right=0.25in]{geometry} % margins
+\NeedsTeXFormat{LaTeX2e} % not sure I need this...
+\usepackage{scrextend}   % indenting blocks of text
+\usepackage{enumitem}    % for bullets
+\usepackage{xparse}
+
+ % columns
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+
+% colour
+\usepackage{xcolor}      % for colors
+\definecolor{highlight}{rgb}{0.75,0.1,0.1}
+\definecolor{lightgray}{gray}{0.25}
+\definecolor{bg}{gray}{0.9}
+
+\colorlet{textcolor}{black}
+\colorlet{headercolor}{black}
+
+% font
+\RequirePackage{fontspec}
+\newfontfamily\bodyfont[]{Brandon Grotesque Regular}
+\newfontfamily\thinfont[]{Brandon Grotesque Light}
+\newfontfamily\headingfont[]{Brandon Grotesque Bold}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Brandon Grotesque Light}[Mapping=tex-text, Color=textcolor]
+
+% page numbering
+\pagenumbering{gobble} % rm pg. #, reset to 1
+\setlist[1]{noitemsep} % sets the itemsep and parsep for lists to 0
+
+% formatting
+\newcommand{\headingsR}[1]{
+    \vspace{2.5mm}
+    \noindent\large\leftskip=0.15in\textbf{#1}
+    \vspace{2.5mm}
+}
+
+\newcommand\headingsL[1]{
+    \vspace{2.5mm}
+    \noindent\large\leftskip=0in\textbf{#1}
+    \vspace{2.5mm}
+}
+
+\newcommand\infoL[1]{
+    \noindent\small\leftskip=0in{#1}
+}
+
+\newcommand\summaryL[1]{
+    \noindent\vspace{-2.5mm}{#1}
+}
+
+\newcommand\listL[1]{
+    \vspace{-2.5mm}\begin{itemize}[leftmargin=0.15in]\setlength\itemsep{1.5mm}{#1}\end{itemize}
+}
+
+\newcommand\infoR[1]{
+    \noindent\small\leftskip=0.15in{#1}
+}
+
+\renewcommand{\bfseries}{\headingfont\color{headercolor}}
+\newcommand{\entryL}[3]{
+    \noindent\small\leftskip=0in\textbf{#1}{\hfill\textcolor{lightgray}{#2}\\
+        {\footnotesize\addfontfeature{Color=lightgray} #3}\
+        \vspace{1mm}
+    }
+}
+
+\renewcommand{\bfseries}{\headingfont\color{headercolor}}
+\newcommand{\entryR}[3]{
+    \noindent\small\leftskip=0.15in\textbf{#1}{\hfill\textcolor{lightgray}{#2}\\
+        {\footnotesize\addfontfeature{Color=lightgray} #3}\
+        \vspace{1mm}
+    }
+}
+
+\renewcommand{\bfseries}{\headingfont\color{headercolor}}
+\newcommand{\entrysmR}[2]{
+    \noindent\small\leftskip=0.15in\textbf{#1}\hfill\textcolor{lightgray}{#2}\\
+    \vspace{-4mm}
+}
+
+% init page
+\begin{document}
+\thispagestyle{empty} % remove number on first page
+\fboxsep0pt
+
+% header
+\noindent
+\begin{minipage}{0.95\linewidth}
+    \begin{multicols}{2}
+
+        \topskip0pt
+        \vspace*{\fill}
+        \noindent\huge\leftskip=0.25in\textbf{JOSEPH D VIVIANO}
+        \vspace*{\fill}
+
+        \columnbreak\normalsize
+        \hfill www.viviano.ca\
+
+        \hfill joseph@viviano.ca\
+
+        \hfill Universit\'e de Montr\'eal\
+
+        \hfill 2900 Edouard Montpetit Blvd, Montr\'eal, QC\
+
+    \end{multicols}
+    \vspace{0in}
+\end{minipage}
+\vspace{0.1in}
+
+%\begin{multicols}{2}
+\begin{minipage}[t]{0.55\linewidth}
+
+\headingsL{EXPERIENCE}
+
+\infoL{\textbf{My mission is to transform my love of biomedical science
+into health care technologies that scale.} I've demonstrated the consistent
+ability to take the lead on large projects, learn the nessicary skills, and
+deliver results. I previously managed the development of a biomedical data
+management system and treatment-outcome prediction tools for psychiatric
+patients using MRI scans. Now I'm studying deep learning at the Universit\'e de
+Montr\'eal and seek to expand into other areas of medical technology.} \\
+
+\entryL
+{Research Methods Specialist}{2014--17}
+{Kimel TIGRlab, Centre for Addiction and Mental Health}
+
+\listL
+{
+\item Managed the design \& implementation (team of 5) of a sophisticated data management platform used daily by researchers (team of 20).
+\item Invented an accurate machine learning test that identifies vulnerable patients, \& directed 2 other similar successful projects, including 1 deep learning project.
+\item Managed R\&D (team of 3) of quality assurance tools that repair corrupted data \& detect critical hardware failures.
+\item Led R\&D on multiple novel analytic approaches that have guided the majority of the lab's research during my tenure.
+\item Lead developer of production analysis code used by our scientists.
+\item Mentored scientists, post docs, graduate students, \& engineers.
+\item Managed a 22-node compute cluster.
+\item Designed \& contributed key analysis, writing, \& tools for 2 successfully funded grants \& 7 published papers.
+}
+
+\entryL
+{Data Analyst}{2013--14}
+{CANN Lab, York University}
+
+\listL
+{
+\item Architect of a custom platform for data pipeline development, now used in multiple research institutions.
+\item Responsible for maintaining a fleet of 5 computers.
+\item Mentored graduate students in neuroimaging analysis approaches.
+\item Designed \& contributed key analysis \& tools to 2 published papers.
+}
+
+\entryL
+{Graduate Student}{2011--13}
+{Schneider Lab, York University}
+
+\listL
+{
+\item Successfully identified a small region of the human thalamus never before observed in a living person using a new high-resolution imaging approach \& unique visual stimulus.
+\item Portions of master's thesis published in the Journal of Neuroscience.
+\item Led 11 labs on biology \& statistics including evaluations \& assessments.
+\item Designed \& contributed key analysis \& tools to 3 published papers.
+}
+
+\end{minipage}
+% right column (SKILLS & EDUCATION)
+%\columnbreak
+%\noindent\fcolorbox{white}{bg}{%
+\begin{minipage}[t]{\dimexpr0.37\textwidth+2\fboxrule+2\fboxsep\relax}
+
+\headingsR{RESEARCH}
+
+\infoR
+{\textbf{Publications}: I've led 3 complete research projects as first author \& contributed crucial analysis or direction to an additional 15.\\
+\textbf{Precision Medicine}: I invent methods for extracting new medical knowledge from biological data. \\
+\textbf{Deep Learning}: I'm passionate about the relationship with neuroscience, as well as the numerous applications to medical data.}
+
+\headingsR{TECHNOLOGIES}
+
+\entryR
+{Python}{Proficient}
+{Numpy, scipy, scikit-learn, pytorch, tensorflow.}
+
+\entrysmR
+{MATLAB}{Proficient}
+
+\entrysmR
+{R}{Intermediate}
+
+\entryR
+{Unix Administration}{Intermediate}
+{Webservers, virtualisation, \& containerisation.}
+
+\entrysmR
+{C}{Familiar}
+
+\entrysmR
+{Java}{Familiar}
+
+\entrysmR
+{SQL}{Familiar}
+
+\headingsR{EDUCATION}
+
+\entryR
+{MSc. Computer Science, Professional}{2018--}
+{Universit\'e de Montr\'eal, Montr\'eal, QC}
+
+\entryR
+{Certified System Administrator}{2016}
+{Linux Foundation}
+
+\entryR
+{MSc. Biology, With Distinction}{2011--13}
+{York University, Toronto, ON}
+
+\entryR
+{BSc. Psychology,  Hons.}{2005--09}
+{Queen's University, Toronto, ON}
+
+\headingsR{COURSES}
+
+\entryR
+{Deep Learning Specialization}{} % 2018
+{deeplearning.ai, Coursera}
+
+\entryR
+{Neural Networks for Machine Learning}{} % 2017
+{Coursera}
+
+\entryR
+{Hadoop Platform \& Application Framework}{} % 2017
+{Coursera}
+
+\entryR
+{Machine Learning}{} % 2016
+{Coursera}
+
+%\entryR
+%{The Essentials of System Administration}{} % 2016
+%{The Linux Foundation}
+
+\entryR
+{Intro to High Performance Computing}{} % 2014-16
+{SciNet, University of Toronto}
+
+%\entryR
+%{Intro to Data Science}{} % 2013
+%{Coursera}
+
+\end{minipage} % also end background color
+%\end{multicols}
+%\vfill
+%
+\begin{center}
+\small{Compiled on \usdate\today.}
+\end{center}
+
+\end{document}
+
