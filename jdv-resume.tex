@@ -6,20 +6,16 @@
 \usepackage{enumitem}    % for bullets
 \usepackage{xparse}
 
- % columns
 \usepackage{multicol}
 \setlength{\columnsep}{1cm}
 
-% colour
-\usepackage{xcolor}      % for colors
+\usepackage{xcolor}
 \definecolor{highlight}{rgb}{0.75,0.1,0.1}
 \definecolor{lightgray}{gray}{0.25}
 \definecolor{bg}{gray}{0.9}
-
 \colorlet{textcolor}{black}
 \colorlet{headercolor}{black}
 
-% font
 \RequirePackage{fontspec}
 \newfontfamily\bodyfont[]{Brandon Grotesque Regular}
 \newfontfamily\thinfont[]{Brandon Grotesque Light}
@@ -27,11 +23,11 @@
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont{Brandon Grotesque Light}[Mapping=tex-text, Color=textcolor]
 
-% page numbering
+% Page numbering.
 \pagenumbering{gobble} % rm pg. #, reset to 1
 \setlist[1]{noitemsep} % sets the itemsep and parsep for lists to 0
 
-% formatting
+% Formatting.
 \newcommand{\headingsR}[1]{
     \vspace{2.5mm}
     \noindent\large\leftskip=0.15in\textbf{#1}
@@ -82,12 +78,11 @@
     \vspace{-4mm}
 }
 
-% init page
 \begin{document}
 \thispagestyle{empty} % remove number on first page
 \fboxsep0pt
 
-% header
+% Header.
 \noindent
 \begin{minipage}{0.95\linewidth}
     \begin{multicols}{2}
@@ -111,18 +106,17 @@
 \end{minipage}
 \vspace{0.1in}
 
-%\begin{multicols}{2}
+% Left column.
 \begin{minipage}[t]{0.55\linewidth}
 
 \headingsL{EXPERIENCE}
 
-\infoL{\textbf{My mission is to transform my love of biomedical science
-into health care technologies that scale.} I've demonstrated the consistent
-ability to take the lead on large projects, learn the necessary skills, and
-deliver results. I previously managed the development of a biomedical data
-management system and treatment-outcome prediction tools for psychiatric
-patients using MRI scans. Now I'm studying deep learning at the Universit\'e de
-Montr\'eal and seek to expand into other areas of medical technology.} \\
+% Biomedical focus.
+\infoL{\textbf{My mission is to transform my love of biomedical science into health care technologies that scale.} I've demonstrated the consistent ability to take the lead on large projects, learn the necessary skills, and deliver results. I previously managed the development of a biomedical data management system and treatment-outcome prediction tools for psychiatric patients using MRI scans. Now I'm studying deep learning at the Universit\'e de Montr\'eal and seek to expand into other areas of medical technology.} \\
+
+% General focus.
+%\infoL{\textbf{I want to take the skills I've developed working with messy clinical and neuroscientific data and apply them to make the systems we all rely on more efficient.} I've demonstrated the consistent ability to take the lead on large projects, learn the necessary skills, and deliver results. I previously managed the development of a biomedical data management system and treatment-outcome prediction tools for psychiatric patients using MRI scans. Now I'm studying deep learning at the Universit\'e de Montr\'eal and seek to expand into other industries.} \\
+
 
 \entryL
 {Research Methods Specialist}{2014--17}
@@ -165,9 +159,10 @@ Montr\'eal and seek to expand into other areas of medical technology.} \\
 }
 
 \end{minipage}
-% right column (SKILLS & EDUCATION)
-%\columnbreak
-%\noindent\fcolorbox{white}{bg}{%
+% right column (SKILLS & EDUCATION)  % DO NOT REMOVE
+%\columnbreak                        % BLACK MAJIK @ WERK
+%\noindent\fcolorbox{white}{bg}{%    %
+% Right column.
 \begin{minipage}[t]{\dimexpr0.37\textwidth+2\fboxrule+2\fboxsep\relax}
 
 \headingsR{RESEARCH}
@@ -181,7 +176,7 @@ Montr\'eal and seek to expand into other areas of medical technology.} \\
 
 \entryR
 {Python}{Proficient}
-{Numpy, scipy, scikit-learn, pytorch, tensorflow.}
+{Numpy, scipy, pandas, scikit-learn, pytorch, tensorflow.}
 
 \entrysmR
 {MATLAB}{Proficient}
@@ -250,10 +245,8 @@ Montr\'eal and seek to expand into other areas of medical technology.} \\
 %{Intro to Data Science}{} % 2013
 %{Coursera}
 
-\end{minipage} % also end background color
-%\end{multicols}
-%\vfill
-%
+\end{minipage}
+
 \begin{center}
 \small{Compiled on \usdate\today.}
 \end{center}
