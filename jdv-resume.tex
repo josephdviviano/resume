@@ -5,16 +5,26 @@
 \usepackage{scrextend}   % indenting blocks of text
 \usepackage{enumitem}    % for bullets
 \usepackage{xparse}
+\usepackage{tikz}
 
 \usepackage{multicol}
 \setlength{\columnsep}{1cm}
 
 \usepackage{xcolor}
-\definecolor{highlight}{rgb}{0.75,0.1,0.1}
+\definecolor{highlight}{rgb}{0.75, 0.1, 0.1}
 \definecolor{lightgray}{gray}{0.25}
+\definecolor{lightblue}{rgb}{0.25, 0.25, 0.75}
 \definecolor{bg}{gray}{0.9}
 \colorlet{textcolor}{black}
 \colorlet{headercolor}{black}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=lightblue,
+    filecolor=lightblue,
+    urlcolor=lightblue,
+}
 
 \RequirePackage{fontspec}
 \newfontfamily\bodyfont[]{Brandon Grotesque Regular}
@@ -28,6 +38,29 @@
 \setlist[1]{noitemsep} % sets the itemsep and parsep for lists to 0
 
 % Formatting.
+\newcommand{\externallink}{%
+    \hspace{1pt}\tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{%
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1)
+                --++ (-0, 1.2)
+                --++ (0.6, 0)
+                --++ (0, -0.6)
+                --++ (0.6, 0)
+                --++ (0, -1);
+            \path[draw,
+                line width = 0.5,
+                rounded corners=0.5]
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5)
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1)
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+
+\newcommand\link[2]{\href{#1}{#2 \externallink}}
+
 \newcommand{\headingsR}[1]{
     \vspace{2.5mm}
     \noindent\large\leftskip=0.15in\textbf{#1}
@@ -58,24 +91,27 @@
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entryL}[3]{
-    \noindent\small\leftskip=0in\textbf{#1}{\hfill\textcolor{lightgray}{#2}\\
-        {\footnotesize\addfontfeature{Color=lightgray} #3}\
-        \vspace{1mm}
+    \noindent\small\leftskip=0in\textbf{#1}
+        {\hfill\footnotesize\textcolor{lightgray}{#2}\\
+            {\footnotesize\addfontfeature{Color=black} #3}\
+            \vspace{1mm}
     }
 }
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entryR}[3]{
-    \noindent\small\leftskip=0.15in\textbf{#1}{\hfill\textcolor{lightgray}{#2}\\
-        {\footnotesize\addfontfeature{Color=lightgray} #3}\
-        \vspace{1mm}
+    \noindent\small\leftskip=0.15in\textbf{#1}
+        {\hfill\footnotesize\textcolor{lightgray}{#2}\\
+            {\footnotesize\addfontfeature{Color=lightgray} #3}\
+            \vspace{1mm}
     }
 }
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entrysmR}[2]{
-    \noindent\small\leftskip=0.15in\textbf{#1}\hfill\textcolor{lightgray}{#2}\\
-    \vspace{-4mm}
+    \noindent\small\leftskip=0.15in\textbf{#1}
+        \hfill\footnotesize\textcolor{lightgray}{#2}\\
+        \vspace{-4mm}
 }
 
 \begin{document}
@@ -93,13 +129,13 @@
         \vspace*{\fill}
 
         \columnbreak\normalsize
-        \hfill www.viviano.ca\
-
         \hfill joseph@viviano.ca\
 
-        \hfill Universit\'e de Montr\'eal\
+        \hfill viviano.ca | github.com/josephdviviano\
 
-        \hfill 2900 Edouard Montpetit Blvd, Montr\'eal, QC\
+        \hfill Mila Quebec AI Institute\
+
+        \hfill 6666 Rue Saint Urbain St, Montr\'eal, QC\
 
     \end{multicols}
     \vspace{0in}
@@ -119,50 +155,58 @@
 
 
 \entryL
-{Research Intern}{2019}
-{Imagia}
+{Research Intern}{2019--Now}
+{\link{https://mila.quebec/}{Mila Medical, Mila Quebec AI Institute}}
 
 \listL
 {
-\item Developed novel method for controlling what medical classifiers pay attention to when making predictions.
-\item Development of method that combine clinical notes and medical images to improve classification and localization.
+\item Developed method for ensuring medical classifiers make the right predictions for the right reasons.
 \item Curation of a dataset designed to study the effect of site-driven bias.
 }
 
 \entryL
-{Research Methods Specialist}{2014--17}
-{Kimel TIGRlab, Centre for Addiction and Mental Health}
+{Research Intern}{2019}
+{\link{https://www.imagia.com}{Imagia Cybernetics}}
 
 \listL
 {
-\item Managed the design \& implementation (team of 5) of a data management platform used daily by researchers (team of 20).
-\item Developed a published machine learning tools that identifies vulnerable patients.
-\item Managed R\&D (team of 3) of quality assurance tools that repair corrupted data \& detect critical hardware failures.
+\item Developed method for producing cancer localizations when only the disease state is available during training.
+\item Developed method for combining clinical notes and medical images to improve classification.
+}
+
+\entryL
+{Research Methods Specialist}{2014--17}
+{\link{http://imaging-genetics.camh.ca/}{Kimel TIGRlab, Centre for Addiction and Mental Health}}
+
+\listL
+{
+\item Developed two published machine learning tools that identify vulnerable \link{https://www.sciencedirect.com/science/article/abs/pii/S0006322318314392}{schizophrenia} and \link{https://journals.plos.org/ploscompbiol/article?rev=2&id=10.1371/journal.pcbi.1006376}{Alzheimer's} patients.
+\item Managed the design \& implementation (team of 5) of a \link{https://github.com/TIGRLab/datman}{data management platform} and \link{https://github.com/TIGRLab/qcmon}{quality assurance tools} used by team of 20.
 \item Lead developer of production analysis code used by the scientists.
-\item Mentored scientists, post docs, graduate students, \& engineers in computational methods.
+\item Technical training on computational methods.
 \item Managed a 22-node compute cluster.
-\item Designed \& contributed key analysis, writing, \& tools for 2 successfully funded grants \& 13 published papers.
+\item Key analysis, writing, \& tools for 2 successfully funded grants \& 13 published papers.
 }
 
 \entryL
 {Data Analyst}{2013--14}
-{CANN Lab, York University}
+{\link{http://www.yorku.ca/grturner/cann-home.html}{CANN Lab, York University}}
 
 \listL
 {
-\item Architect of a custom platform for data pipeline development.
+\item Architect of a \link{https://github.com/josephdviviano/epitome}{platform for MRI pipeline development}.
 %\item Mentored graduate students in neuroimaging analysis approaches.
-\item Designed \& contributed key analysis \& tools to 2 published papers.
+\item Analytic support for \link{https://www.sciencedirect.com/science/article/abs/pii/S0197458016300896}{biomarker of reduced executive function in aging} and an \link{https://www.sciencedirect.com/science/article/abs/pii/S0028393219301721}{associated cognitive task}.
 }
 
 \entryL
 {Graduate Student}{2011--13}
-{Schneider Lab, York University}
+{\link{http://keith.psych.udel.edu/}{Schneider Lab, York University}}
 
 \listL
 {
-\item Led 11 labs on biology \& statistics including evaluations \& assessments.
-\item Designed \& contributed key analysis, writing, \& tools to 3 published papers.
+%\item Led 11 labs on biology \& statistics including evaluations \& assessments.
+\item High resolution MRI of the \link{https://www.jneurosci.org/content/35/27/9836.short}{human visual input} and \link{https://www.jneurosci.org/content/35/5/2026.short}{feedback} systems.
 }
 
 \end{minipage}
@@ -175,9 +219,23 @@
 \headingsR{RESEARCH}
 
 \infoR
-{\textbf{Publications}: I've led 4 complete research projects as first author \& contributed crucial analysis or direction to an additional 17.\\
-\textbf{Precision Medicine}: I invent methods for extracting new medical knowledge from biological data. \\
+{\textbf{Publications}: I led 4 first-author projects \& contributed to an additional 17.\\
+\textbf{Precision Medicine}: Biomarker development for patient-tailored treatments. \\
 \textbf{Deep Learning}: Unsupervised and semi-supervised learning, multimodal learning, interpretability.}
+
+\headingsR{EDUCATION}
+
+\entryR
+{MSc. Computer Science, Machine Learning Specialization}{2018--Now}
+{Mila, Universit\'e de Montr\'eal, Montr\'eal, QC}
+
+\entryR
+{MSc. Biology, Neuroscience Specialization, With Distinction}{2011--13}
+{York University, Toronto, ON}
+
+\entryR
+{BSc. Psychology,  Hons.}{2005--09}
+{Queen's University, Toronto, ON}
 
 \headingsR{TECHNOLOGIES}
 
@@ -185,8 +243,8 @@
 {Python}{Proficient}
 {Numpy, scipy, pandas, scikit-learn, pytorch, tensorflow.}
 
-%\entrysmR
-%{MATLAB}{Proficient}
+\entrysmR
+{MATLAB}{Intermediate}
 
 \entrysmR
 {R}{Intermediate}
@@ -204,41 +262,21 @@
 \entrysmR
 {SQL}{Familiar}
 
-
-\headingsR{EDUCATION}
-
-\entryR
-{MSc. Computer Science, Professional}{2018--}
-{Mila, Universit\'e de Montr\'eal, Montr\'eal, QC}
-
-\entryR
-{Certified System Administrator}{2016}
-{Linux Foundation}
-
-\entryR
-{MSc. Biology, With Distinction}{2011--13}
-{York University, Toronto, ON}
-
-\entryR
-{BSc. Psychology,  Hons.}{2005--09}
-{Queen's University, Toronto, ON}
-
-\headingsR{INSTRUCTION}
+\headingsR{TEACHING}
 
 \entryR
 {Introduction to Deep Learning}{2019}
-{McGill BrainHack Summer School}
+{McGill BrainHack Summer School \& MAIN Conference Workshop}
 
 \entryR
 {Python for Neuroimaging}{2015}
 {Centre for Addiction and Mental Health}
 
+\headingsR{EXTRACURRICULAR}
 
-\headingsR{COURSEWORK}
-
-%\entryR
-%{Deep Learning Specialization}{} % 2018
-%{deeplearning.ai, Coursera}
+\entryR
+{Deep Learning Specialization}{2018}
+{deeplearning.ai, Coursera}
 
 %\entryR
 %{Neural Networks for Machine Learning}{} % 2017
@@ -252,12 +290,16 @@
 %{Machine Learning}{} % 2016
 %{Coursera}
 
-\entryR
-{The Essentials of System Administration}{} % 2016
-{The Linux Foundation}
+%\entryR
+%{The Essentials of System Administration}{} % 2016
+%{The Linux Foundation}
 
 \entryR
-{Intro to High Performance Computing}{} % 2014-16
+{Certified System Administrator}{2016}
+{Linux Foundation}
+
+\entryR
+{High Performance Computing}{2014--16} % 2014-16
 {SciNet, University of Toronto}
 
 %\entryR
