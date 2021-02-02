@@ -28,6 +28,29 @@
 \setmainfont[Mapping=tex-text, Color=textcolor]{Brandon Grotesque Light}
 
 % formatting
+\newcommand{\externallink}{%
+    \hspace{1pt}\tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{%
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1)
+                --++ (-0, 1.2)
+                --++ (0.6, 0)
+                --++ (0, -0.6)
+                --++ (0.6, 0)
+                --++ (0, -1);
+            \path[draw,
+                line width = 0.5,
+                rounded corners=0.5]
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5)
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1)
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+
+\newcommand\link[2]{\href{#1}{#2 \externallink}}
+
 \newcounter{colorCounter}
 \def\@sectioncolor#1#2#3{%
   {%
@@ -140,11 +163,16 @@
 {Thesis Supervised by Dr. Keith Schneider. \\\
 `Tremotopic mapping of the human thalamic reticular nucleus'.\\\
 }
+
 \entry
 {2005--2009}
 {BSc. Hons., Psychology.}
 {Queen's University, ON/CA.}
 {} \\\
+
+
+For work \link{https://www.github.com/josephdviviano/resume/blob/master/jdv-resume.pdf?raw=true}{\textbf{EXPERIENCE} please see my resume}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \sectionheading{PUBLICATIONS \& CONFERENCE PAPERS} \\\
