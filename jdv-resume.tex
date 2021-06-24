@@ -89,6 +89,10 @@
     \noindent\small\leftskip=0.15in{#1}
 }
 
+\newcommand\listR[1]{
+    \vspace{-2.5mm}\begin{itemize}[leftmargin=0.30in]\setlength\itemsep{1.5mm}{#1}\end{itemize}
+}
+
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entryL}[3]{
     \noindent\small\leftskip=0in\textbf{#1}
@@ -99,10 +103,17 @@
 }
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
+\newcommand{\entrysmL}[2]{
+    \noindent\small\leftskip=0in\textbf{#1}
+        \hfill\footnotesize\textcolor{lightgray}{#2}\\
+        \vspace{-4mm}
+}
+
+\renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entryR}[3]{
     \noindent\small\leftskip=0.15in\textbf{#1}
         {\hfill\footnotesize\textcolor{lightgray}{#2}\\
-            {\footnotesize\addfontfeature{Color=lightgray} #3}\
+            {\footnotesize\addfontfeature{} #3}\
             \vspace{1mm}
     }
 }
@@ -147,21 +158,14 @@
 
 \headingsL{EXPERIENCE}
 
-% Biomedical focus.
-%\infoL{\textbf{My mission is to transform my love of biomedical science into health care technologies that scale.} I've demonstrated the consistent ability to take the lead on large projects, learn the necessary skills, and deliver results. I previously managed the development of a biomedical data management system and treatment-outcome prediction tools for psychiatric patients using MRI scans, and now I'm exploring new applications of deep learning to medical data.} \\
-
-% General focus.
-%\infoL{\textbf{I love user-focused technology}. I've worked with psychiatrists to develop biomarkers for treatment response, radiologists to detect cancer, Google to price ads, and a pension fund to trade equities.} \\
-
 \entryL
 {Applied Research Scientist}{2020--Now}
 {\link{https://mila.quebec/}{Mila Technology Transfer, Mila Quebec AI Institute}}
 
 \listL
 {
-\item Research on medical applications, ethics of language models, cognitively-inspired AI, and out of distribution generalization.
-\item Equity momentum trading strategies with \link{https://www.cdpq.com/en}{CDPQ} (\$365 B under management).
-%\item Object-detection in edge devices and for document forgery detection.
+\item Research on medical applications, ethics of language models, and cognitively-inspired AI.
+\item R\&D on deep-learning driven equity momentum trading strategies with \link{https://www.cdpq.com/en}{CDPQ} and robust representation learning for digital forgery detection in a limited data environment with \link{https://www.jumio.com/}{Jumio}.
 %\item Use of attention mechanisms for composable representation learning.
 %\item Consulting with Mila partners on point cloud semantic segmentation and cognitive testing.
 }
@@ -182,18 +186,7 @@
 \listL
 {
 \item Uncertainty estimation research for predicted click through rates.
-%\item Produced research pipeline for future search ad pCTR research.
-}
-
-
-\entryL
-{Research Intern}{2019--2020}
-{\link{https://mila.quebec/}{Mila Quebec AI Institute}}
-
-\listL
-{
-\item Performed explainable AI research whether saliency can be relied on to \link{https://arxiv.org/abs/1910.00199}{diagnose generalization failures}.
-%\item Contributed to the open-source \link{https://github.com/mlmed/torchxrayvision}{torchxrayvision} project.
+\item Produced research pipeline for future search ad pCTR research.
 }
 
 \entryL
@@ -203,6 +196,7 @@
 \listL
 {
 \item Developed deep learning method for cancer localization without segmentations, and multimodal classification combining images with clinical notes.
+%\item Contributed to the open-source \link{https://github.com/mlmed/torchxrayvision}{torchxrayvision} project.
 }
 
 \entryL
@@ -215,7 +209,7 @@
 \item Managed the design \& implementation (team of 5) of a \link{https://github.com/TIGRLab/datman}{data management platform} and \link{https://github.com/TIGRLab/qcmon}{quality assurance tools} used by team of 20.
 %\item Lead developer of production analysis code used by the scientists.
 %\item Technical training on computational methods.
-%\item Managed a 22-node compute cluster.
+\item Managed a 22-node compute cluster.
 %\item Contributed to 2 successfully funded grants \& 13 published papers.
 }
 
@@ -225,20 +219,21 @@
 
 \listL
 {
-%\item Architect of a \link{https://github.com/josephdviviano/epitome}{platform for MRI pipeline development}.
+\item Architect of a \link{https://github.com/josephdviviano/epitome}{platform for MRI pipeline development}.
 %\item Mentored graduate students in neuroimaging analysis approaches.
 \item Developed biomarker of \link{https://www.sciencedirect.com/science/article/abs/pii/S0197458016300896}{reduced executive function in aging}.
 }
 
-\entryL
-{Graduate Student}{2011--13}
-{\link{http://keith.psych.udel.edu/}{Schneider Lab, York University}}
+\headingsL{PROJECTS}
 
-\listL
-{
-%\item Led 11 labs on biology \& statistics including evaluations \& assessments.
-\item MRI research of the \link{https://www.jneurosci.org/content/35/27/9836.short}{human visual input} and \link{https://www.jneurosci.org/content/35/5/2026.short}{feedback} systems.
-}
+\entrysmL
+{\link{https://github.com/josephdviviano/pyddsm}{PyDDSM}}{Data extraction tool for a mammography dataset.}
+
+\entrysmL
+{\link{https://github.com/josephdviviano/whatsinthebox}{What's In the Box?}}{Undesirable content identifier for the Common Crawl.}
+
+\entrysmL
+{\link{https://github.com/mlmed/torchxrayvision}{TorchXRayVision}}{Library for chest XRay datasets and models.}
 
 \end{minipage}
 % right column (SKILLS & EDUCATION)  % DO NOT REMOVE
@@ -261,43 +256,45 @@
 
 \entryR
 {MSc. Computer Science, Machine Learning Specialization}{2018--20}
-{Mila, Universit\'e de Montr\'eal, Montr\'eal, QC \\
-Reinforcement Learning, Deep Learning, NLP, Machine Learning, \& CS Fundamentals.}
+{\link{https://mila.quebec/}{Mila}, Universit\'e de Montr\'eal, Montr\'eal, QC}
+
+\listR{
+\item Research on whether saliency methods can be relied on to \link{https://arxiv.org/abs/1910.00199}{diagnose generalization failures} of deep learning models.
+\item Coursework on Reinforcement Learning, Deep Learning, NLP, \& CS Fundamentals.
+}
 
 \entryR
 {MSc. Biology, Neuroscience Specialization, With Distinction}{2011--13}
-{York University, Toronto, ON \\
-Magnetic Resonance Imaging, Systems Neuroscience, \& Statistics.}
+{\link{http://keith.psych.udel.edu/}{Schneider Lab}, York University, Toronto, ON}
+
+\listR{
+\item Research using Magnetic Resonance Imaging of the \link{https://www.jneurosci.org/content/35/27/9836.short}{human visual input} and \link{https://www.jneurosci.org/content/35/5/2026.short}{feedback} systems.
+%\item Coursework on Systems Neuroscience and Statistics.
+}
 
 \entryR
 {BSc. Psychology,  Hons.}{2005--09}
-{Queen's University, Toronto, ON \\
-Psychology, Neuroscience, Statistics, and Philosophy.}
+{Queen's University, Toronto, ON}
+
+%\listR{
+%\item Coursework in Psychology, Neuroscience, Statistics, and Philosophy.
+%}
 
 \headingsR{TECHNOLOGIES}
 
 \entryR
 {Python}{Proficient}
-{Numpy, scipy, pandas, scikit-learn, pytorch, tensorflow.}
+{Pytorch, tensorflow, numpy, scipy, pandas, scikit-learn.}
+
+\entryR
+{Unix Administration}{Intermediate}
+{Webservers, virtualisation, \& containerisation. Linux Foundation certified system administrator.}
 
 \entrysmR
 {MATLAB}{Intermediate}
 
 \entrysmR
-{R}{Intermediate}
-
-\entryR
-{Unix Administration}{Intermediate}
-{Webservers, virtualisation, \& containerisation. Certified system administrator by Linux Foundation (2016).}
-
-\entrysmR
-{C}{Familiar}
-
-\entrysmR
-{Java}{Familiar}
-
-\entrysmR
-{SQL}{Familiar}
+{R, C, Java, SQL}{Familiar}
 
 %\headingsR{TEACHING}
 
@@ -323,8 +320,7 @@ Psychology, Neuroscience, Statistics, and Philosophy.}
 %{Hadoop Platform \& Application Framework}{} % 2017
 %{Coursera}
 
-%\entryR
-%{Machine Learning}{} % 2016
+%\entryR%{Machine Learning}{} % 2016
 %{Coursera}
 
 %\entryR
