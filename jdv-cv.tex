@@ -136,31 +136,27 @@
 \thispagestyle{empty} % remove number on first page
 
 \fboxsep0pt
+
+% Header.
 \noindent
-%\colorbox{bg}{
-\begin{minipage}{\textwidth}
+\begin{minipage}[t]{0.49\linewidth}\vspace{0pt}
 
-    \vspace{0.1in}
-    \begin{multicols}{2}
+    \topskip0pt
+    \vspace*{\fill}
+    \noindent\huge\leftskip=0.075in\textbf{JOSEPH D VIVIANO}
+    \vspace*{\fill}
 
-        \topskip0pt
-        \vspace*{\fill}
-        \huge\textbf{JOSEPH D VIVIANO}
-        \vspace*{\fill}
-
-        \columnbreak\normalsize
-        \hfill \link{https://www.viviano.ca/}{www.viviano.ca}\
-
-        \hfill joseph@viviano.ca\
-
-        \hfill \link{https://mila.quebec/}{Mila Quebec AI Institute}\
-
-        \hfill 6666 St Urbain St, Montr\'eal, QC\
-
-    \end{multicols}
-    \vspace{0in}
 \end{minipage}
-%}
+\begin{minipage}[t]{0.45\linewidth}\vspace{0pt}\raggedleft
+
+    joseph@viviano.ca\ | \link{https://www.viviano.ca}{viviano.ca}\\
+    \link{https://scholar.google.com/citations?user=Jd7wEJ8AAAAJ&hl=en}{GScholar} \\
+    \link{https://twitter.com/josephdviviano}{twitter.com/josephdviviano}\\
+    \link{https://www.github.com/josephdviviano}{github.com/josephdviviano}%\\ %Deep Genomics, 6666 Rue Saint Urbain, Montr\'eal
+
+\end{minipage}
+\vspace{0.1in}
+
 \begin{flushleft}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,14 +164,14 @@
 
 \entry
 {2018--2020}
-{MSc., Computer Science.}
+{MSc., Computer Science}
 {Universit\'e de Montr\'eal, QC/CA.}
 {\item Internship Supervised by \link{https://yoshuabengio.org/}{Dr. Yoshua Bengio} \newline
 `Methods for controlling and utilizing saliency maps in medical imaging'.} \\\
 
 \entry
 {2011--2013}
-{MSc. with Distinction, Biology.}
+{MSc. with Distinction, Biology}
 {York University, ON/CA.}
 {\item Thesis Supervised by \link{https://www.linkedin.com/in/keith0/}{Dr. Keith Schneider} \newline
 `Tremotopic mapping of the human thalamic reticular nucleus'.}\\\
@@ -191,7 +187,26 @@
 \sectionheading{PROFESSIONAL EXPERIENCE}
 
 \entry
-{2020--Now}
+{2021--Now}
+{ML Research Scientist}
+{\link{https://www.deepgenomics.com/}{Deep Genomics}, QC/CA.}
+{
+    \item Self-supervised learning (auto-regressive and masked-language modelling) for biological sequence representations.
+    \item Multi-modal methods facilitating biological sequence-to-sequence models to generalize to novel cell types.
+    \item Anomaly detection pipeline for our drug screening platform.
+} \\\
+
+\entry
+{2021--Now}
+{Scientific Mentor}
+{\link{https://creativedestructionlab.com/streams/ai/cdl-montreal-artificial-intelligence/}{Creative Destruction Lab Montr\'eal}, QC/CA.}
+{
+    \item Performed technical assessments of startups and provided feedback for a business and investor focused audience.
+    \item Technical direction for startups in the NLP, CV, and ML for Bio spaces.
+} \\\
+
+\entry
+{2020--2021}
 {Applied Research Scientist}
 {Mila Qu\'ebec AI Institute, QC/CA.}
 {
@@ -204,7 +219,7 @@
 {PhD to VC Fellow}
 {Fifty Years, CA/US.}
 {
-    \item \link{https://fiftyyears.com/phdvc}{Evening and weekends program} teaching the basics of venture capital specifically for deep technology companies: the terminology, the economics, how to source, how to diligence, and how to support.
+    \item \link{https://fiftyyears.com/phdvc}{Course} where I sourced, diligenced, and  deep-tech pre-seed/seed stage companies, performed due diligence on them, \& helped source technical talent.
 } \\\
 
 \entry
@@ -212,7 +227,7 @@
 {Research Intern}
 {Google, PA/US.}
 {
-    \item Built a research pipeline to test ideas on an internal click through rate dataset. This pipeline will be used as a testbed for future research collaborations.
+    \item Built a research pipeline to test ideas on an internal click through rate dataset. % This pipeline will be used as a testbed for future research collaborations.
     \item Uncertainty (epistemic) estimation methods for the \link{https://techcrunch.com/2012/05/31/google-calls-its-smart-ad-relevance-system-smart-ass-yes-seriously/}{search ads predicted click through rate team}.
 } \\\
 
@@ -231,10 +246,9 @@
 {Research Methods Specialist}
 {Centre for Addiction and Mental Health, ON/CA.}
 {
-    \item Managed the design \& implementation (team of 5) of a sophisticated data management platform used daily by researchers (team of 20).
-    \item Led R\&D on novel analytic approaches and quality assurance pipelines.
-    \item Managed a 22-node compute cluster.
-    \item Designed \& contributed key analysis, writing, \& tools for 2 successfully funded grants \& 15 published papers.
+    \item Biomarkers for  vulnerable \link{https://www.sciencedirect.com/science/article/abs/pii/S0006322318314392}{schizophrenia} and \link{https://journals.plos.org/ploscompbiol/article?rev=2&id=10.1371/journal.pcbi.1006376}{Alzheimer's} patients.
+    \item Designed, built, and managed (team of 5) a \link{https://github.com/TIGRLab/datman}{data management platform} 22-node compute cluster, and \link{https://github.com/TIGRLab/qcmon}{QA tools} used by team of 20.
+    \item Contributions to 2 successfully funded grants \& 15 published papers.
 } \\\
 
 %\entry
@@ -247,21 +261,21 @@
 %} \\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\sectionheading{PROJECTS}
+% \sectionheading{PROJECTS}
 
-\skills
+% \skills
 
-\skills
+% \skills
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\sectionheading{SKILLS}
+%\sectionheading{SKILLS}
 
-\skills
-{Python}{Tensorflow, pytorch, numpy, pandas, scipy, scikit-learn.}
+%\skills
+%{Python}{Tensorflow, pytorch, numpy, pandas, scipy, scikit-learn.}
 
-\skills
-{Unix Administration}{Webservers, virtualisation, \& containerisation. Certified system administrator by Linux Foundation (2016).}
+%\skills
+%{Unix Administration}{Certified system administrator by Linux Foundation (2016).}  % Webservers, virtualisation, \& containerisation.
 
 %\skills
 %{Other Languages}{R, MATLAB, Java, C, SQL.} \\\
@@ -273,7 +287,7 @@
 {Reviewing}{Paper reviews for \link{https://iclr.cc/}{ICLR}, \link{http://preregister.science/}{NeurIPS Pre-registration in ML Workshop}, \link{https://www.biologicalpsychiatryjournal.com/}{Biological Psychiatry}, \link{https://www.midl.io/}{MIDL}, \& \link{https://journals.plos.org/plosone/}{PLOS ONE}.}
 
 \skills
-{Instruction}{Technical training on entry-level deep learning at \link{http://www.crm.umontreal.ca/2019/MAIN2019/index_e.php}{MAIN 2019} and \link{https://brainhackmtl.github.io/global2019/}{Brainhack 2019}. Scientific computing course on Python for data analysis also developed for the Center for Addiction and Mental Health.} \\\
+{Instruction}{Technical training on entry-level deep learning at \link{http://www.crm.umontreal.ca/2019/MAIN2019/index_e.php}{MAIN 2019} and \link{https://brainhackmtl.github.io/global2019/}{Brainhack 2019}.} \\\ %Scientific computing course on Python for data analysis also developed for the Center for Addiction and Mental Health.} \\\
 
 %\entry
 %{2019}
@@ -298,6 +312,8 @@
 \sectionheading{SELECTED PUBLICATIONS}
 
 \paper{* = equal contributions. For a complete list of my work, \link{https://scholar.google.com/citations?user=Jd7wEJ8AAAAJ&hl=en}{please see my Google Scholar}.}
+
+\paper{Cohen JP, \textcolor{highlight}{Viviano JD}, Bertin P, Morrison P, Torabian P, Guarrera M, Lungren MP, Chaudhari A, Brooks R, Hashir M, Bertrand H. TorchXRayVision: A library of chest X-ray datasets and models. Medical Imaging with Deep Learning (MIDL), 2022.}
 
 \paper{Luccioni A, \textcolor{highlight}{Viviano JD}. What’s in the Box? A Preliminary Analysis of Undesirable Content in the Common Crawl Corpus. The Joint Conference of the Association for Computational Linguistics and the International Joint Conference on Natural Language Processing (ACL-IJCNLP), 2021.}
 
