@@ -1,6 +1,6 @@
 % Pedigree fools fools.
 \documentclass[a4paper,12pt,oneside]{book}
-\usepackage[top=0.5in, bottom=0.5in, left=0.25in, right=0.25in]{geometry} % margins
+\usepackage[top=0.35in, bottom=0.35in, left=0.2in, right=0.2in]{geometry} % margins
 \NeedsTeXFormat{LaTeX2e} % not sure I need this...
 \usepackage{scrextend}   % indenting blocks of text
 \usepackage{enumitem}    % for bullets
@@ -8,7 +8,7 @@
 \usepackage{tikz}  % for link graphic
 
 \usepackage{multicol}
-\setlength{\columnsep}{1cm}
+\setlength{\columnsep}{0.75cm}
 
 \usepackage{xcolor}
 \definecolor{highlight}{rgb}{0.75, 0.1, 0.1}
@@ -39,38 +39,28 @@
 
 % Formatting.
 \newcommand{\externallink}{%
-    \hspace{1pt}\tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{%
-        \begin{scope}[x=1ex, y=1ex]
-            \clip (-0.1,-0.1)
-                --++ (-0, 1.2)
-                --++ (0.6, 0)
-                --++ (0, -0.6)
-                --++ (0.6, 0)
-                --++ (0, -1);
-            \path[draw,
-                line width = 0.5,
-                rounded corners=0.5]
-                (0,0) rectangle (1,1);
-        \end{scope}
-        \path[draw, line width = 0.5] (0.5, 0.5)
-            -- (1, 1);
-        \path[draw, line width = 0.5] (0.6, 1)
-            -- (1, 1) -- (1, 0.6);
-        }
-    }
+    \hspace{1pt}\tikz[x=0.8ex, y=0.8ex, baseline=-0.05ex]{%
+        % Draw first oval link
+        \draw[line width=0.2]
+            (0,0) circle [x radius=0.6, y radius=0.3, rotate=45];
+        % Draw second oval link
+        \draw[line width=0.2]
+            (0.48,0.48) circle [x radius=0.6, y radius=0.3, rotate=45];
+    }%
+}
 
 \newcommand\link[2]{\href{#1}{#2 \externallink}}
 
 \newcommand{\headingsR}[1]{
-    \vspace{2.5mm}
+    \vspace{1.5mm}
     \noindent\large\leftskip=0.15in\textbf{#1}
-    \vspace{2.5mm}
+    \vspace{1.5mm}
 }
 
 \newcommand\headingsL[1]{
-    \vspace{2.5mm}
+    \vspace{1.5mm}
     \noindent\large\leftskip=0in\textbf{#1}
-    \vspace{2.5mm}
+    \vspace{1.5mm}
 }
 
 \newcommand\infoL[1]{
@@ -78,50 +68,50 @@
 }
 
 \newcommand\summaryL[1]{
-    \noindent\vspace{-2.5mm}{#1}
+    \noindent\vspace{-2.5mm}\small{#1}
 }
 
 \newcommand\listL[1]{
-    \vspace{-2.5mm}\begin{itemize}[leftmargin=0.15in]\setlength\itemsep{1.5mm}{#1}\end{itemize}
+    \vspace{-3.5mm}\begin{itemize}[leftmargin=0.15in]\setlength\itemsep{0.75mm}\small{#1}\end{itemize}
 }
 
 \newcommand\infoR[1]{
-    \noindent\small\leftskip=0.15in{#1}
+    \small\leftskip=0.15in\noindent{#1}
 }
 
 \newcommand\listR[1]{
-    \vspace{-2.5mm}\begin{itemize}[leftmargin=0.30in]\setlength\itemsep{1.5mm}{#1}\end{itemize}
+    \vspace{-3.5mm}\begin{itemize}[leftmargin=0.30in]\setlength\itemsep{0.75mm}\small{#1}\end{itemize}
 }
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entryL}[3]{
     \noindent\small\leftskip=0in\textbf{#1}
-        {\hfill\footnotesize\textcolor{lightgray}{#2}\\
-            {\footnotesize\addfontfeature{Color=black} #3}\
-            \vspace{1mm}
+        {\hfill\small\textcolor{lightgray}{#2}\\
+            {\small\addfontfeature{Color=black} #3}\
+            \vspace{0.25mm}
     }
 }
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entrysmL}[2]{
     \noindent\small\leftskip=0in\textbf{#1}
-        \hfill\footnotesize\textcolor{lightgray}{#2}\\
+        \hfill\small\textcolor{lightgray}{#2}\\
         \vspace{-4mm}
 }
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entryR}[3]{
     \noindent\small\leftskip=0.15in\textbf{#1}
-        {\hfill\footnotesize\textcolor{lightgray}{#2}\\
-            {\footnotesize\addfontfeature{} #3}\
-            \vspace{1mm}
+        {\hfill\small\textcolor{lightgray}{#2}\\
+            {\small\addfontfeature{} #3}\
+            \vspace{0.25mm}
     }
 }
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entrysmR}[2]{
     \noindent\small\leftskip=0.15in\textbf{#1}
-        \hfill\footnotesize\textcolor{lightgray}{#2}\\
+        \hfill\small\textcolor{lightgray}{#2}\\
         \vspace{-4mm}
 }
 
@@ -142,11 +132,10 @@
 \begin{minipage}[t]{0.45\linewidth}\vspace{0pt}\raggedleft
 
     joseph@viviano.ca\ | \link{https://www.viviano.ca}{viviano.ca} | \link{https://scholar.google.com/citations?user=Jd7wEJ8AAAAJ&hl=en}{GScholar} \\
-    \link{https://twitter.com/josephdviviano}{twitter.com/josephdviviano}\\
-    \link{https://www.github.com/josephdviviano}{github.com/josephdviviano}%\\ %Deep Genomics, 6666 Rue Saint Urbain, Montr\'eal
+    \link{https://x.com/josephdviviano}{x.com/josephdviviano} | \link{https://www.github.com/josephdviviano}{github.com/josephdviviano}
 
 \end{minipage}
-\vspace{0.1in}
+\vspace{0.075in}
 
 % Left column.
 \begin{minipage}[t]{0.55\linewidth}
@@ -159,10 +148,12 @@
 
 \listL
 {
-% \item ML Research and Development for Applied ML for Science projects stemming from the research of Yoshua Bengio’s group.
+% \item ML Research and Development for Applied ML for Science projects stemming from the research of Yoshua Bengio's group.
 % \item Macro action abstractions for amortized samplers (e.g., GFlowNets).
-\item Lead developer of \link{https://github.com/gfnorg/torchgfn}{TorchGFN}, a modular and easy to extend GFlowNet library.
-\item Collaborations with \link{https://www.amgen.com/}{Amgen} (GFlowNets for antibody design) and \link{https://www.intel.com/content/www/us/en/homepage.html}{Intel} (large scale training of GFlowNets), and general research support.
+\item Lead developer of \link{https://github.com/gfnorg/torchgfn}{TorchGFN}, a modular and easy to extend open source GFlowNet library (an amortized sampling method used in many AI for science applications).
+\item Collaborations with \link{https://www.amgen.com/}{Amgen} (ML for antibody design) and \link{https://www.intel.com/content/www/us/en/homepage.html}{Intel} (large scale training of GFlowNets).
+\item Developed a collaboration and wrote a grant proposal with the \link{https://www.jbei.org/}{Joint BioEnergy Institute} to develop a multi-center AI for Metabolic Engineering research collaboration.
+\item ML engineering support for the lab, largely to optimize code-bases for efficient training (e.g., \link{https://arxiv.org/abs/2406.08506}{RGFN} and \link{https://arxiv.org/abs/2503.20027}{FLECS}.)
 }
 
 \entryL
@@ -171,7 +162,7 @@
 
 \listL
 {
-\item Self-supervised learning for biological sequence representations, multi-modal methods facilitating biological sequence-to-sequence models to generalize to novel cell types, \& anomaly detection pipeline for our drug screening platform.
+\item I investigated architectures for sequence-based RNA foundation models, methods for cell-type generalization (a core challenge for drug discovery), \& anomaly detection pipeline for the drug screening platform allowing for early detection of laboratory failures.
 }
 
 \entryL
@@ -180,7 +171,8 @@
 
 \listL
 {
-\item Performed technical assessment of and consulting for startups, and provided feedback for a business and investor focused audience.
+\item Performed technical assessment \& consulting for early-stage startups.
+\item Guidance on ML and AI strategy towards next funding round.
 % \item Technical direction for startups in the NLP, CV, and ML for Bio spaces.
 }
 
@@ -190,7 +182,8 @@
 
 \listL
 {
-\item Deep-learning driven equity momentum trading (\link{https://www.cdpq.com/en}{CDPQ}), robust representation learning for digital forgery detection (\link{https://www.jumio.com/}{Jumio}), LLM dataset analysis, and modular deep learning.
+\item Collaborative development of a deep-learning driven equity momentum trading strategy (\link{https://www.cdpq.com/en}{CDPQ}) \& digital forgery detection (\link{https://www.jumio.com/}{Jumio}).
+\item Research on LLM data set composition \& modular deep learning.
 }
 
 \entryL
@@ -199,12 +192,12 @@
 
 \listL
 {
-\item I sourced, diligenced, and  deep-tech pre-seed/seed stage companies, performed due diligence on them, \& helped source technical talent.
+\item I sourced and performed due-diligence on pre-seed/seed deep-tech companies, \& helped source technical talent.
 }
 
 \entryL
 {Research Intern}{2020}
-{\link{https://techcrunch.com/2012/05/31/google-calls-its-smart-ad-relevance-system-smart-ass-yes-seriously/}{Google, Smart Ad Relevance System Predicted Click Through Rate Team}}
+{\link{https://techcrunch.com/2012/05/31/google-calls-its-smart-ad-relevance-system-smart-ass-yes-seriously/}{Google, Ad Predicted Click Through Rate Team}}
 
 \listL
 {
@@ -218,7 +211,7 @@
 
 \listL
 {
-\item Segmentation-free lesion localization and multimodal classification combining images with clinical notes.
+\item Cancer localization methods (segmentation-free localization \& weak supervision from clinical notes) addressing scarcity of labelled data.
 %\item Contributed to the open-source \link{https://github.com/mlmed/torchxrayvision}{torchxrayvision} project.
 }
 
@@ -260,33 +253,26 @@
 %{\link{https://github.com/josephdviviano/pyddsm}{PyDDSM}}{Data extraction tool for a mammography dataset.}
 
 \entrysmR
-{\link{https://github.com/GFNOrg/torchgfn}{TorchGFN}}{A modular, easy to extend GFlowNet library.}
+{\link{https://github.com/GFNOrg/torchgfn}{TorchGFN}}{259 stars, 49 forks, 13 contributors. A modular, easy to extend GFlowNet library.  \link{https://arxiv.org/abs/2305.14594}{arXiv}.}
 
 %\entrysmR
 %{\link{https://github.com/josephdviviano/whatsinthebox}{What's In the Box?}}{Undesirable content identifier for the Common Crawl.}
 
 \entrysmR
-{\link{https://github.com/mlmed/torchxrayvision}{TorchXRayVision}}{Open source library for chest XRay datasets and models.}
+{\link{https://github.com/mlmed/torchxrayvision}{TorchXRayVision}}{995 stars, 227 forks, 11 contributors. Open source library for XRay datasets \& models. \link{https://proceedings.mlr.press/v172/cohen22a}{PMLR 2022}.}
 
 \headingsR{EDUCATION}
 
 \entryR
-{MSc. Computer Science, Machine Learning Specialization}{2018--20}
+{MSc. CS, Machine Learning}{2018--20}
 {\link{https://mila.quebec/}{Mila}, Universit\'e de Montr\'eal, Montr\'eal, QC}
-
-\listR{
-\item Research on whether saliency methods can be relied on to \link{https://arxiv.org/abs/1910.00199}{diagnose generalization failures} of deep learning models.
-%\item Coursework on Reinforcement Learning, Deep Learning, NLP, \& CS Fundamentals.
-}
+\infoR{Research on utility of saliency methods for \link{https://arxiv.org/abs/1910.00199}{diagnosing generalization failures} of deep learning models.}
+%\item Coursework on Reinforcement Learning, Deep Learning, NLP, \& CS Fundamentals.}
 
 \entryR
-{MSc. Biology, Neuroscience Specialization, With Distinction}{2011--13}
+{MSc. Bio, Neuroscience, Cum Laude}{2011--13}
 {\link{http://keith.psych.udel.edu/}{Schneider Lab}, York University, Toronto, ON}
-
-\listR{
-\item Research using Magnetic Resonance Imaging of the \link{https://www.jneurosci.org/content/35/27/9836.short}{human visual input} and \link{https://www.jneurosci.org/content/35/5/2026.short}{feedback} systems.
-%\item Coursework on Systems Neuroscience and Statistics.
-}
+\infoR{Subcortial fMRI methods (\link{https://www.jneurosci.org/content/35/27/9836.short}{1}, \link{https://www.jneurosci.org/content/35/5/2026.short}{2}).}
 
 \entryR
 {BSc. Psychology,  Hons.}{2005--09}
@@ -296,31 +282,36 @@
 %\item Coursework in Psychology, Neuroscience, Statistics, and Philosophy.
 %}
 
+\headingsR{INVITED TALKS}
+
+\entryR
+{JGI Annual User Meeting}{2023}{Considerations for Machine Learning-Aided Lab in the Loop Scientific Discovery.}
+
+\entryR
+{FACSS SciX Keynote Presentation}{2024}{Keynote presentation on AI for science.}
 
 \headingsR{RESEARCH \& COMMUNITY}
 
-\infoR
-{
-%\textbf{Bio \& Health}: Genomics, biomarkers for precision medicine. \\
-%\textbf{Deep Learning}: Representation learning for robust and explainable models, multimodal learning, attention mechanisms. \\
-\textbf{Invited Talks}: \link{https://usermeeting.jgi.doe.gov/past-meetings/2023-meeting/2023-speakers/}{JGI Annual User Meeting, 2023}, \link{https://scix2024.eventscribe.net/agenda.asp?pfp=FullSchedule}{FACSS SciX Keynote Presentation, 2024}.
-\textbf{Teaching}: Stats \& ML taught at CAMH, \link{https://school.brainhackmtl.org/}{McGill BrainHack}, \& \link{http://www.crm.umontreal.ca/2019/MAIN2019/index_e.php}{MAIN}.
-\textbf{Paper Reviews}: \link{https://iclr.cc/}{ICLR},  \link{http://preregister.science/}{NeurIPS Pre-registration in ML Workshop}, \link{https://www.biologicalpsychiatryjournal.com/}{Biological Psychiatry}, \link{https://www.midl.io/}{MIDL}, \& \link{https://journals.plos.org/plosone/}{PLOS ONE}.
-\textbf{Area Chair}: \link{https://neurips.cc/}{NeurIPS Datasets \& Benchmark Track}
-}.
+\listR{
+\item \textbf{Teaching}: Stats \& ML taught at \link{https://www.camh.ca/}{Center for Addiction and Mental Health} \& \link{https://x.com/main_community}{Montr\'eal AI \& Neuroscience Meeting, 2019}.  % \link{https://school.brainhackmtl.org/}{McGill BrainHack, 2019},
+\item \textbf{Paper Reviews}: \link{https://neurips.cc/}{NeurIPS}, \link{https://iclr.cc/}{ICLR}, \link{https://www.biologicalpsychiatryjournal.com/}{Biological Psychiatry}, \link{https://www.midl.io/}{MIDL}, \& \link{https://journals.plos.org/plosone/}{PLOS ONE}.  % \link{https://www.lmrl.org/}{ICLR Learning Meaningful Representations of Life Workshop, 2025}, \link{http://preregister.science/}{NeurIPS Pre-registration in ML Workshop, 2021},
+\item \textbf{Area Chair}: \link{https://neurips.cc/}{NeurIPS Datasets \& Benchmark Track, 2023--2024}
+}
+\vspace{-5mm}
+\headingsR{PUBLICATIONS}
 
 \entryR
-{Selected Publications}{h-index=20}
-{\textit{* denotes first/last author.}}
-
+{\textit{* denotes first/last author.}}{h-index=20}
+{\vspace{-3mm}
 \listR{
-\item Action abstractions for amortized sampling, 2024.
-\item torchgfn: A PyTorch GFlowNet library, 2023.
-\item TorchXRayVision: A library of chest X-ray datasets and models, 2022.
-\item * What’s in the Box? A Preliminary Analysis of Undesirable Content in the Common Crawl Corpus, ACL 2021. 
-\item * Saliency is a Possible Red Herring When Diagnosing Poor Generalization, ICLR 2021. 
-%\item * Resting-state connectivity biomarkers of cognitive performance and social function in individuals with schizophrenia spectrum disorder and healthy control subjects, 2018. 
-% \item Alzheimer’s Disease Neuroimaging Initiative Modeling and prediction of clinical symptom trajectories in Alzheimer’s disease using longitudinal data, 2018. \\
+\item Action abstractions for amortized sampling, \textbf{ICLR} 2025.
+% \item torchgfn: A PyTorch GFlowNet library, 2023.
+% \item TorchXRayVision: A library of chest X-ray datasets and models, PMLR 2022.
+\item * What's in the Box? A Preliminary Analysis of Undesirable Content in the Common Crawl Corpus, \textbf{ACL} 2021.
+\item * Saliency is a Possible Red Herring When Diagnosing Poor Generalization, \textbf{ICLR} 2021.
+\item * Resting-state connectivity biomarkers of cognitive performance and social function in individuals with schizophrenia spectrum disorder and healthy control subjects, \textbf{Biological Psychiatry} 2018.
+% \item Alzheimer's Disease Neuroimaging Initiative Modeling and prediction of clinical symptom trajectories in Alzheimer's disease using longitudinal data, 2018. \\
+}
 }
 
 % \entryR
@@ -378,7 +369,7 @@
 \end{minipage}
 
 \begin{center}
-\small{Compiled on \usdate\today.}
+\tiny{Compiled on \usdate\today.}
 \end{center}
 
 \end{document}
