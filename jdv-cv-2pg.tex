@@ -1,6 +1,6 @@
 % Pedigree fools fools.
 \documentclass[a4paper,11pt,oneside]{book}
-\usepackage[top=0.75in, bottom=0.75in, left=1.25in, right=1.25in]{geometry} % margins
+\usepackage[top=0.65in, bottom=0.65in, left=1in, right=1in]{geometry} % margins
 \NeedsTeXFormat{LaTeX2e}
 \usepackage{scrextend} % for indenting blocks of text
 \usepackage{xcolor}    % for colors
@@ -103,12 +103,12 @@
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
-  \parbox[t]{2.5cm}{#1\hfill}\hspace{0cm}\parbox[t]{11.15cm}{%
+  \parbox[t]{2.5cm}{#1\hfill}\hspace{0cm}\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\
-    \vspace{1.5mm}
-    \begin{itemize}[leftmargin=-1.5cm]#4\end{itemize}\vspace{\parsep}%
+    \vspace{1.2mm}
+    \begin{itemize}[leftmargin=-1.5cm,itemsep=0.8mm]#4\end{itemize}\vspace{0.8\parsep}%
   }}
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
@@ -122,12 +122,12 @@
     \noindent
     \leftskip=0in
     \textbf{#1\\
-    \vspace{4.5mm}}
+    \vspace{3.5mm}}
 }
 
 \newcommand\paper[1]{
     #1\\
-    \vspace{4.5mm}
+    \vspace{3.5mm}
 }
 
 
@@ -191,19 +191,20 @@
 {ML Scientist}
 {Mila Qu\'ebec AI Institute, QC/CA.}
 {
-    \item Development of open-source GFlowNet tools such as \link{https://github.com/gfnorg/torchgfn}{torchgfn}.
-    \item ML for Science research with a focus on Biology.
-    \item Ongoing project with \link{https://www.amgen.com/}{Amgen} on antibody design.
-}
+    \item Lead developer of \link{https://github.com/gfnorg/torchgfn}{torchgfn} GFlowNet library (290 stars, 49 forks, 15 contributors).
+    \item GFlowNet application collaborations: Antibody design ()\link{https://www.amgen.com/}{Amgen}), distributed search scaling (\link{https://www.intel.com/content/www/us/en/homepage.html}{Intel}).
+    \item Lab engineering support for ML for Science projects. % and scientific content coordination.
+    \item Grant writing: Mila's compute infrastructure, AI for Metabolic Engineering with \link{https://www.jbei.org/}{Joint BioEnergy Institute}.
+} \\\
 
 \entry
 {2021--2022}
 {ML Research Scientist}
 {\link{https://www.deepgenomics.com/}{Deep Genomics}, QC/CA.}
 {
-    \item Self-supervised learning (autoregressive and masked-language modelling) for biological sequence representations.
-    \item Multi-modal methods facilitating biological sequence-to-sequence models to generalize to novel cell types.
-    \item Anomaly detection pipeline for our drug screening platform.
+    \item Self-supervised learning for biological sequence representations.
+    \item Methods for cell-type generalization.
+    \item Drug screening anomaly detection pipeline.
 } \\\
 
 %\entry
@@ -221,7 +222,7 @@
 {Mila Qu\'ebec AI Institute, QC/CA.}
 {
     \item Consult on, propose, and implement deep learning solutions for Mila's partners: Optimal portfolio allocation (finance) \& digital forgery-detection (fraud).
-    \item Collaboration with Mila researchers on medical applications research and cognitively-inspired AI.
+    % \item Collaboration with Mila researchers on medical applications research and cognitively-inspired AI.
 } \\\
 
 %\entry
@@ -237,7 +238,7 @@
 {Research Intern}
 {Google, PA/US.}
 {
-    \item Built a research pipeline to test ideas on an internal click through rate dataset. % This pipeline will be used as a testbed for future research collaborations.
+    % \item Built a research pipeline to test ideas on an internal click through rate dataset. % This pipeline will be used as a testbed for future research collaborations.
     \item Uncertainty (epistemic) estimation methods for the \link{https://techcrunch.com/2012/05/31/google-calls-its-smart-ad-relevance-system-smart-ass-yes-seriously/}{search ads predicted click through rate team}.
 } \\\
 
@@ -246,8 +247,7 @@
 {Research Intern}
 {Imagia, QC/CA.}
 {
-    \item Developed methods for combining clinical notes with medical images to improve classification performance.
-    \item Developed methods for localizing disease without explicit labels of where the disease is located in an image.
+    \item Developed methods for combining clinical notes with medical images to improve classification performance and for localizing disease without explicit labels of where the disease is located in an image.
 } \\\
 
 \entry
@@ -256,8 +256,8 @@
 {Centre for Addiction and Mental Health, ON/CA.}
 {
     \item Biomarkers for  vulnerable \link{https://www.sciencedirect.com/science/article/abs/pii/S0006322318314392}{schizophrenia} and \link{https://journals.plos.org/ploscompbiol/article?rev=2&id=10.1371/journal.pcbi.1006376}{Alzheimer's} patients.
-    \item Designed, built, and managed (team of 5) a \link{https://github.com/TIGRLab/datman}{data management platform} 22-node compute cluster, and \link{https://github.com/TIGRLab/qcmon}{QA tools} used by team of 20.
-    \item Contributions to 2 successfully funded grants \& 15 published papers.
+    \item Designed, built, and managed compute infrastructure and data management platform. %(team of 5) a \link{https://github.com/TIGRLab/datman}{data management platform} 22-node compute cluster, and \link{https://github.com/TIGRLab/qcmon}{QA tools} used by team of 20.
+    % \item Contributions to 2 successfully funded grants \& 15 published papers.
 } \\\
 
 %\entry
@@ -293,10 +293,10 @@
 \sectionheading{COMMUNITY SERVICE}
 
 \entry
-{2023}
+{2023-2025}
 {Area Chair}
 {Meta Reviewing}
-{Paper Adjudication for \link{https://neurips.cc/virtual/2023}{NeurIPS Datasets and Benchmarks Workshop 2023}}
+{Paper Adjudication for \link{https://neurips.cc/virtual/2023}{NeurIPS Datasets and Benchmarks Track}}
 
 \entry
 {2023}
@@ -325,7 +325,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \sectionheading{SELECTED PUBLICATIONS}
 
-\paper{Lahlau S, \textcolor{highlight}{Viviano JD}, Schmidt V. torchgfn: A PyTorch GFlowNet library. arXiv, 2023.}
+\paper{\textcolor{highlight}{Viviano JD}*, Younis OG*, Choi S*, Schmidt V, Bengio Y, Lahlau S. torchgfn: A PyTorch GFlowNet library. arXiv, 2025.}
+
+\paper{Bertin P, \textcolor{highlight}{Viviano JD}, Tejada-Lapuerta A, Wang W, Bauer S, Theis FJ, Bengio Y. A scalable gene network model of regulatory dynamics in single cells. arXiv, 2025.}
+
+\paper{Delaunay P, Bouthillier X, Breuleux O, Ortiz-Gagné S, Bilaniuk O, Normandin F, Bergeron A, Carrez B, Alain G, Blanc S, \textcolor{highlight}{Viviano JD}, et al. Introducing Milabench: Benchmarking Accelerators for AI. arXiv, 2024.}
 
 \paper{Cohen JP, \textcolor{highlight}{Viviano JD}, Bertin P, Morrison P, Torabian P, Guarrera M, Lungren MP, Chaudhari A, Brooks R, Hashir M, Bertrand H. TorchXRayVision: A library of chest X-ray datasets and models. Medical Imaging with Deep Learning (MIDL), 2022.}
 
@@ -385,6 +389,18 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \sectionheading{INVITED TALKS}
+\entry
+{2024}
+{Keynote Speaker}
+{FACSS SciX}
+{Could an AI Understand a Scientist?}
+
+% \entry
+% {2024}
+% {Invited Speaker}
+% {Faculty of Pharmacy, University of Montreal}
+% {Machine Learning for Drug Discovery and Development}
+
 \entry
 {2023}
 {}
