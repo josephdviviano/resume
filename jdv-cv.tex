@@ -1,6 +1,6 @@
 % Pedigree fools fools.
 \documentclass[a4paper,11pt,oneside]{book}
-\usepackage[top=0.75in, bottom=0.75in, left=1.25in, right=1.25in]{geometry} % margins
+\usepackage[top=0.65in, bottom=0.65in, left=1in, right=1in]{geometry} % margins
 \NeedsTeXFormat{LaTeX2e}
 \usepackage{scrextend} % for indenting blocks of text
 \usepackage{xcolor}    % for colors
@@ -103,12 +103,12 @@
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
-  \parbox[t]{2.5cm}{#1\hfill}\hspace{0cm}\parbox[t]{11.15cm}{%
+  \parbox[t]{2.5cm}{#1\hfill}\hspace{0cm}\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\
-    \vspace{1.5mm}
-    \begin{itemize}[leftmargin=-1.5cm]#4\end{itemize}\vspace{\parsep}%
+    \vspace{1.2mm}
+    \begin{itemize}[leftmargin=-1.5cm,itemsep=0.8mm]#4\end{itemize}\vspace{0.8\parsep}%
   }}
 
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
@@ -122,12 +122,12 @@
     \noindent
     \leftskip=0in
     \textbf{#1\\
-    \vspace{4.5mm}}
+    \vspace{3.5mm}}
 }
 
 \newcommand\paper[1]{
     #1\\
-    \vspace{4.5mm}
+    \vspace{3.5mm}
 }
 
 
@@ -299,7 +299,7 @@
 {2023-2025}
 {Area Chair}
 {Meta Reviewing}
-{Paper Adjudication for \link{https://neurips.cc/virtual/2023}{NeurIPS Datasets and Benchmarks Track}}
+{Paper Adjudication for \link{https://neurips.cc/virtual/2023}{NeurIPS Datasets and Benchmarks Track}.}
 
 \entry
 {2023}
@@ -310,8 +310,8 @@
 \entry
 {2014-2023}
 {Reviewing}
-{Paper reviews for conferences and journals.}
-{Reviews for \link{https://iclr.cc/}{ICLR}, \link{http://preregister.science/}{NeurIPS Pre-registration in ML Workshop}, \link{https://fpineurips.framer.website/}{FPI NeurIPS}, \link{https://www.biologicalpsychiatryjournal.com/}{Biological Psychiatry}, \link{https://www.midl.io/}{MIDL}, \link{https://www.pnas.org/}{PNAS}, \& \link{https://journals.plos.org/plosone/}{PLOS ONE}}.
+{Paper reviews for conferences and journals}
+{Reviews for \link{https://iclr.cc/}{ICLR}, \link{http://preregister.science/}{NeurIPS Pre-registration in ML Workshop}, \link{https://fpineurips.framer.website/}{FPI NeurIPS}, \link{https://www.biologicalpsychiatryjournal.com/}{Biological Psychiatry}, \link{https://www.midl.io/}{MIDL}, \link{https://www.pnas.org/}{PNAS}, \& \link{https://journals.plos.org/plosone/}{PLOS ONE}.}
 
 \entry
 {2019}
@@ -406,7 +406,7 @@ paper{Chavez S, \textcolor{highlight}{Viviano JD}, Zamyadi M, Kingsley PB, Kochu
 {2024}
 {Invited Speaker}
 {Faculty of Pharmacy, University of Montreal}
-{Machine Learning for Drug Discovery and Development}
+{Machine Learning for Drug Discovery and Development.}
 
 \entry
 {2023}
